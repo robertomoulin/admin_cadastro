@@ -149,3 +149,9 @@ LOGGING = {
 }
 
 URL_SERVICE = 'http://localhost:8000/'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'roberto.rmoulin@gmail.com'
+EMAIL_HOST_PASSWORD = 'camarillachewbaccad20'
+EMAIL_PORT = 587
