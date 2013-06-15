@@ -3,6 +3,7 @@
 from django.shortcuts import render_to_response
 from django.contrib.auth import authenticate, logout, login as authlogin
 from django.template import RequestContext
+from django.http import HttpResponse
 
 from mysite.cadastro_rh.models import FormContato
 from cadastro_rh.models import Cadastro
@@ -41,3 +42,9 @@ def enviar_email(request):
     else:
         form = FormContato()
     return render_to_response('contato.html', locals(), context_instance=RequestContext(request, {}))
+
+
+def java_script(request):
+    filename = request.path.strip("/")
+    data = open(filename, "rb").read()
+    return HttpResponse(data, mimetype="application/x-javascript")
