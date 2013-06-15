@@ -4,18 +4,18 @@ from django.db import models
 from django.core.mail import send_mail
 
 
-STATUS_LIST = (('A','Ativo'),('I','Inativo'),)
+STATUS_LIST = (('A', 'Ativo'), ('I', 'Inativo'), )
 
 
 class Cadastro(models.Model):
 
         _id = models.AutoField(primary_key=True)
         nome = models.CharField(max_length=255)
-        foto = models.ImageField(upload_to='cadastros/%Y',null=True,blank=True)
+        foto = models.ImageField(upload_to='cadastros/%Y', null=True, blank=True)
         email = models.EmailField(max_length=200)
-        status = models.CharField(max_length=1,choices=STATUS_LIST)
+        status = models.CharField(max_length=1, choices=STATUS_LIST)
         telefone = models.CharField(max_length=20)
-        datanascimento = models.DateField(verbose_name='Data de Nascimento',null=True,blank=True)
+        datanascimento = models.DateField(verbose_name='Data de Nascimento', null=True, blank=True)
         departamento = models.CharField(max_length=30)
         cargo = models.CharField(max_length=30)
         datacadastro = models.DateTimeField(auto_now_add=True)
@@ -39,8 +39,4 @@ class FormContato(forms.Form):
         destino = 'roberto.rmoulin@gmail.com'
         texto = "aiefiufhaeuuhaefhuafhu"
 
-        send_mail(  subject=titulo,
-                    message=texto,
-                    from_email=destino,
-                    recipient_list=[destino],
-        )
+        send_mail(subject=titulo, message=texto, from_email=destino, recipient_list=[destino])
