@@ -42,9 +42,3 @@ def enviar_email(request):
     else:
         form = FormContato()
     return render_to_response('contato.html',locals(),context_instance=RequestContext(request, {}))
-
-
-def java_script(request):
-    filename = request.path.strip("/")
-    data = open(filename, "rb").read()
-    return HttpResponse(data, mimetype="application/x-javascript")
