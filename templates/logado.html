@@ -1,10 +1,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>logado</title>
+	<title>logado</title>
 </head>
 
 <body>
 Olá {{ request.user }}
+
+<form name="form1" method="post" action="/login/enviar/">{% csrf_token %}
+	<ul>
+	{% for list in lista_cadastro %}
+		<input type="checkbox" name="nome" value={{ list.email }}>{{ list.nome }}<br>
+
+	{% endfor %}
+	</ul>
+	<input type="submit" name="button" id="button" value="Enviar email">
 </body>
+
 </html>
