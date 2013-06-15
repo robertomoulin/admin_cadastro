@@ -4,9 +4,9 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, logout, login as authlogin
 from django.template import RequestContext
-from django import forms
 
-from django.core.mail import send_mail
+
+from mysite.cadastro_rh.models import FormContato
 
 from cadastro_rh.models import Cadastro
 
@@ -36,25 +36,8 @@ def sair(request):
 
 
 
-class FormContato(forms.Form):
-    mensagem = forms.Field(widget=forms.Textarea)
-    email = forms.EmailField(required=False)
-
-    def enviar(self):
-        titulo = 'Mensagem enviada pelo site'
-        destino = 'roberto.rmoulin@gmail.com'
-        texto = "aiefiufhaeuuhaefhuafhu"
-
-        send_mail(  subject=titulo,
-                    message=texto,
-                    from_email=destino,
-                    recipient_list=[destino],
-        )
-
-
 def enviar_email(request):
     if request.method == 'POST':
-        checkbox_mail = request.POST.get('nome')
 
         form = FormContato(request.POST)
         if form.is_valid():
@@ -64,12 +47,7 @@ def enviar_email(request):
     return render_to_response('contato.html',locals(),context_instance=RequestContext(request, {}))
 
 
-
 def java_script(request):
     filename = request.path.strip("/")
     data = open(filename, "rb").read()
     return HttpResponse(data, mimetype="application/x-javascript")
-
-
-def tela_cadastro(request):
-    return render_to_response('tela_cadastro.html', mimetype="text/html")

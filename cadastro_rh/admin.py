@@ -15,18 +15,7 @@ def enviar_email(modeladmin, request, queryset):
         email = item.email
         email_list.append(email)
 
-    send_mail('titulo', email_list, 'contato_rh@gmail.com', email_list)
-
-
-
-# class FormContato(forms.Form):
-#     mensagem = forms.Field(widget=forms.Textarea)
-
-#     def enviar(self, email_list):
-#         titulo = 'Mensagem do RH'
-#         texto = """ Nome: %(nome)s E-mail: %(email)s Mensagem:%(mensagem)s""" % self.cleaned_data
-
-#         send_mail(titulo, texto, 'contato_rh@gmail.com', email_list)
+    send_mail('titulo', email_list, 'roberto.rmoulin@gmail.com', email_list)
 
 
 
