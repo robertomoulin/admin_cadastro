@@ -8,10 +8,8 @@
 Olá {{ request.user }}
 
 <form name="form1" method="post" action="/login/enviar/">{% csrf_token %}
-	
 	{% for list in lista_cadastro %}
 		<input type="checkbox" name='checks' value={{ list.email }}>{{ list.nome }}<br>
-
 	{% endfor %}
 	
 	<input type="submit" name="button" id="button" value="Enviar email">

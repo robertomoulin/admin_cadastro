@@ -5,9 +5,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, logout, login as authlogin
 from django.template import RequestContext
 
-
 from mysite.cadastro_rh.models import FormContato
-
 from cadastro_rh.models import Cadastro
 
 
@@ -33,7 +31,6 @@ def login(request):
 def sair(request):
     logout(request)
     return render_to_response('login.html')
-
 
 
 def enviar_email(request):
