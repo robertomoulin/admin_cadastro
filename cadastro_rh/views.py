@@ -9,6 +9,17 @@ from mysite.cadastro_rh.models import FormContato
 # from cadastro_rh.models import Cadastro
 
 
+"""
+Estava fazendo o login do admin tbm pelo front no html da aplicacao.
+Demoraram a responder minha dúvida, fiquei com medo de está implementando de
+de forma errada, aí eu comecei a implementar os 2, pelo admin e pelo
+html da aplicacao. (Agora que vi o email de vcs, to fazendo o admin.)
+
+Não cheguei a terminar por completo a versao pelo html da aplicacao,
+mas vou deixar o código que fiz aqui comentado .
+"""
+
+
 def login(request):
     pass
     # if request.user.id:
@@ -40,7 +51,6 @@ def enviar_email(request):
         form = FormContato(request.POST)
         email_list = request.POST.get('email')
         texto = request.POST.get('texto')
-        # if form.is_valid():
         form.enviar(email_list, texto)
         return render_to_response('sucesso.html', locals(), context_instance=RequestContext(request, {}))
     else:
