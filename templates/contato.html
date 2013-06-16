@@ -1,9 +1,13 @@
-<form method="post">{% csrf_token %}
-  <table>
-    {{ form }}
-    <tr>
-      <th>&nbsp;</th>
-      <td><input type="submit" value="Enviar contato"/></td>
-    </tr>
-  </table>
+<form name="form1" method="post" action="/login/enviar/">{% csrf_token %}
+
+	<textarea name="texto" rows="4" cols="50">
+	</textarea>
+	<div>
+	<label>Emails: 
+	<input type="text" name="email" id="email" value={{ mail_string }}>
+	</label>
+	</div>
+
+	<input type="submit" value="Enviar contato"/>
+    
 </form>

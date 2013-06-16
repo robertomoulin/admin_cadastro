@@ -33,9 +33,11 @@ class Cadastro(models.Model):
 class FormContato(forms.Form):
     mensagem = forms.Field(widget=forms.Textarea)
 
-    def enviar(self):
-        titulo = 'Mensagem enviada pelo site'
-        destino = 'roberto.rmoulin@gmail.com'
-        texto = "aiefiufhaeuuhaefhuafhu"
+    def enviar(self, email_list, texto):
 
-        send_mail(subject=titulo, message=texto, from_email=destino, recipient_list=destino)
+        titulo = 'Mensagem enviada pelo site do RH'
+        f_email = 'roberto.rmoulin@gmail.com'
+        destino = email_list.split('>>')
+        texto_t = texto
+
+        send_mail(subject=titulo, message=texto_t, from_email=f_email, recipient_list=destino)

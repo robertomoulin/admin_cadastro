@@ -34,11 +34,12 @@ def sair(request):
 
 
 def enviar_email(request):
-    import ipdb; ipdb.set_trace()
     if request.method == 'POST':
         form = FormContato(request.POST)
-        if form.is_valid():
-            form.enviar()
+        email_list = request.POST.get('email')
+        texto = request.POST.get('texto')
+        # if form.is_valid():
+        form.enviar(email_list, texto)
     else:
         form = FormContato()
     return render_to_response('contato.html', locals(), context_instance=RequestContext(request, {}))
