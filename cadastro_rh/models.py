@@ -36,8 +36,8 @@ class FormContato(forms.Form):
     def enviar(self, email_list, texto):
 
         titulo = 'Mensagem enviada pelo site do RH'
-        f_email = 'rh.chewbacca@gmail'
+        f_email = 'rh.chewbacca@gmail.com'
         destino = email_list.split('>>')
-        texto_t = 'Olá colaboradores' + texto
+        texto_t = 'Ola colaboradores' + texto
 
         send_mail(subject=titulo, message=texto_t, from_email=f_email, recipient_list=destino)

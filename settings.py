@@ -152,6 +152,6 @@ URL_SERVICE = 'http://localhost:8000/'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'rh.chewbacca@gmail'
+EMAIL_HOST_USER = 'rh.chewbacca@gmail.com'
 EMAIL_HOST_PASSWORD = 'chewbacca123'
 EMAIL_PORT = 587
