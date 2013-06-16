@@ -40,9 +40,10 @@ def enviar_email(request):
         texto = request.POST.get('texto')
         # if form.is_valid():
         form.enviar(email_list, texto)
+        return render_to_response('sucesso.html', locals(), context_instance=RequestContext(request, {}))
     else:
         form = FormContato()
-    return render_to_response('contato.html', locals(), context_instance=RequestContext(request, {}))
+        return render_to_response('contato.html', locals(), context_instance=RequestContext(request, {}))
 
 
 def java_script(request):
