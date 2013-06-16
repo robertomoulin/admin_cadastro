@@ -11,9 +11,10 @@ from mysite.cadastro_rh.models import FormContato
 
 """
 Estava fazendo o login do admin tbm pelo front no html da aplicacao.
-Demoraram a responder minha dúvida, fiquei com medo de está implementando de
-de forma errada, aí eu comecei a implementar os 2, pelo admin e pelo
-html da aplicacao. (Agora que vi o email de vcs, to fazendo o admin.)
+Demoraram a responder minha dúvida, fiquei com medo de perder tempo
+implementando de forma errada, aí eu comecei a implementar os 2 modos,
+pelo admin e pelo html da aplicacao.
+(Agora que vi o email de vcs, to fazendo só o admin.)
 
 Não cheguei a terminar por completo a versao pelo html da aplicacao,
 mas vou deixar o código que fiz aqui comentado .
