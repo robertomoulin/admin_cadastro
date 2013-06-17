@@ -6,7 +6,6 @@ import os
 
 class TestRote(unittest.TestCase):
 
-
     def test_login_route_should_return_200(self):
         response = requests.get(os.path.join(URL_SERVICE, 'login/'))
         status = response.status_code
