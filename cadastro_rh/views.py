@@ -22,7 +22,6 @@ mas vou deixar o código que fiz aqui comentado .
 
 
 def login(request):
-    pass
     # if request.user.id:
     #     return render_to_response('logado.html', {}, context_instance=RequestContext(request, {}))
 
@@ -38,13 +37,12 @@ def login(request):
 
     #             return render_to_response('logado.html', {'lista_cadastro': lista_cadastro, 'macaca': 'macaca'}, context_instance=RequestContext(request))
 
-    # return render_to_response('login.html', {}, context_instance=RequestContext(request, {}))
+    return render_to_response('login.html', {}, context_instance=RequestContext(request, {}))
 
 
 def sair(request):
-    pass
     # logout(request)
-    # return render_to_response('login.html')
+    return render_to_response('login.html')
 
 
 def enviar_email(request):
