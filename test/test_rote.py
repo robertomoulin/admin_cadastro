@@ -10,3 +10,6 @@ class TestViews(unittest.TestCase):
         response = requests.get(os.path.join(URL_SERVICE, 'login/enviar'))
         status = response.status_code
         self.assertEqual(200, status)
+
+    def test_somar(self):
+        self.assertEqual(2,2)
