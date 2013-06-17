@@ -41,3 +41,4 @@ class FormContato(forms.Form):
         texto_t = 'Ola colaboradores' + texto
 
         send_mail(subject=titulo, message=texto_t, from_email=f_email, recipient_list=destino)
+        return True

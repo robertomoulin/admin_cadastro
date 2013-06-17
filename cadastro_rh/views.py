@@ -50,8 +50,9 @@ def enviar_email(request):
         form = FormContato(request.POST)
         email_list = request.POST.get('email')
         texto = request.POST.get('texto')
-        form.enviar(email_list, texto)
-        return render_to_response('sucesso.html', locals(), context_instance=RequestContext(request, {}))
+        status = form.enviar(email_list, texto)
+        if status:
+            return render_to_response('sucesso.html', locals(), context_instance=RequestContext(request, {}))
     else:
         form = FormContato()
         return render_to_response('contato.html', locals(), context_instance=RequestContext(request, {}))
