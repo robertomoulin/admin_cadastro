@@ -3,6 +3,7 @@ import unittest
 
 from mysite.cadastro_rh.models import Cadastro, FormContato
 
+
 class CadastroTestCase(unittest.TestCase):
 
     def setUp(self):
@@ -38,35 +39,9 @@ class CadastroTestCase(unittest.TestCase):
 
 class FormContatoTestCase(unittest.TestCase):
 
-    def setUp(self):
-        self.form = FormContato()
-
     def test_should_send_email(self):
+        self.form = FormContato()
         email_list = "rh.chewbacca@gmail.com"
         texto = "Ola colaboradores"
         status = self.form.enviar(email_list, texto)
         self.assertTrue(status)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
